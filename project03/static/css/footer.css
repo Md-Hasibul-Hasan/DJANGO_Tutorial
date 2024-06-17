@@ -1,0 +1,52 @@
+
+/* footer start*/
+footer{
+    height: 200px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    background-color: rgb(10, 10, 10);
+    color: white;
+    margin-top: 20px;
+
+}
+
+.name {
+    font-weight: bold;
+    font-size: 40;
+    position: relative;
+    top: 20;
+
+
+}
+
+.text p{
+    width: 600;
+    text-align: center;
+    margin: 0px auto;
+    position: relative;
+    top: 30;
+
+
+
+}
+
+.icon i{
+    font-size: 45;
+    position: relative;
+    top: 40;
+    padding: 10;
+
+}
+
+.copy{
+    position: relative;
+    top: 60;
+    background-color: rgb(111, 106, 110);
+    font-size: 20;
+    height: 30;
+    line-height: 30px;
+}
+
+

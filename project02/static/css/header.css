@@ -1,0 +1,38 @@
+
+.navbar{
+    height: 40px;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(59, 114, 63);
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+a:hover{
+    background-color: aqua;
+    color: black;
+    border: 1px solid white;
+}
+
+
+.btn:hover{
+    background-color: aqua;
+}
+
+.active a{
+    background-color: red;
+}

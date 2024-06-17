@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+</head>
+<body>
+    <h1 >this is form</h1>
+
+    <form action="/form/" method="post" >
+        {% csrf_token %}
+        <label for="">Name:</label>
+        <input type="text" name="name" > <br>
+        <label for="">Email:</label>
+        <input type="email" name="email" required><br>
+        <label for="">Phone:</label>
+        <input type="number" name="number"> <br>
+        <label for="">Website:</label>
+        <input type="text" name="web"> <br>
+        <textarea name="mess"  cols="20" rows="3" placeholder="Comment Here:"></textarea> <br>
+        <input type="submit" name="sub" value="send" > {{key}}
+    </form>
+    
+</body>
+</html>
+
+{% endblock  %}

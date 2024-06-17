@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content  %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contuct</title>
+</head>
+<body>
+    <h1>This is Contuct</h1>
+
+    <form action="" method="get">
+        {% comment %} {% csrf_token%} {% endcomment %}
+        <input type="text" name="filter">
+        <button type="submit">Search</button>
+    </form>
+
+    {% for i in k %}
+
+    {{i.icon}}
+    {{i.title  }}
+    {{i.description}} <br>
+   
+
+   {% empty %}
+   NO Data Found
+
+    {% endfor %}
+
+    <div>
+        <span>
+            {% if k.has_previous %}
+            <a href="?page=1">first</a>
+            <a href="?page={{ k.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span>{{ k.number }} of {{ k.paginator.num_pages }}</span>
+            
+            {% if k.has_next %}
+            <a href="?page={{ k.next_page_number }}">next</a>
+            <a href="?page={{ k.paginator.num_pages }}">last</a>
+            {% endif %}
+        </span>
+    </div>
+    
+    
+    
+    
+    
+    
+</body>
+</html>
+
+{% endblock %}

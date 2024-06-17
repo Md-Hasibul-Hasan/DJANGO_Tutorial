@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content  %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+
+     <!-- GET method -->
+
+     <!-- <div class="form1">
+        <form action="#" method="get">
+
+            <label for="">value1:</label>
+            <input type="text" name="num1" value="{{first}}" > <br> <br>
+    
+            <label for="">value2:</label>
+            <input type="text" name="num2" value="{{first}}"> <br> <br>
+
+            <button type="submit">Save</button> <br> <br>
+            Total:
+            <input type="text" value="{{sum}}">
+    
+
+        </form>
+    </div> -->
+
+
+    <!-- POST method -->
+
+    <div class="form1">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <label for="">value1:</label>
+            <input type="text" name="num1" value="{{first}}"> <br> <br>
+    
+            <label for="">value2:</label>
+            <input type="text" name="num2" value="{{second}}"> <br> <br>
+
+            <button type="submit">Save</button> <br> <br>
+            Total:
+            <input type="text" value="{{sum}}">
+    
+
+        </form>
+    </div>
+
+
+</body>
+</html>
+
+{% endblock  %}
