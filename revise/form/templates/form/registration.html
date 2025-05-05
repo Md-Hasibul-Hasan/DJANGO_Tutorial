@@ -1,0 +1,23 @@
+{% extends "root/base.html" %}
+
+{% block title %}Registration{% endblock title %}
+
+{% block content %}
+<h1>Registration</h1>
+<form action="" method="post">{% csrf_token %}
+       {% comment %} <label for="{{f.first_name.id_for_label}}">First name:</label>
+       <input type="text" id="{{f.first_name.id_for_label}}" name="{{f.first_name.name}}" placeholder="First Name" value="{{f.first_name.value | default:""}}" required> <br>
+
+
+       <label for="{{f.last_name.id_for_label}}">Last name:</label>
+       <input type="text" id="{{f.last_name.id_for_label}}" name="{{f.last_name.name}}" placeholder="last Name" value="{{f.last_name.value | default:""}}" required> <br>
+
+
+       <label for="{{f.email.id_for_label}}">Email:</label>
+       <input type="email" id="{{f.email.id_for_label}}" name="{{f.email.name}}" placeholder="Email" value="{{f.email.value | default:""}}" required> <br>
+       <input type="submit" value="Submit"> {% endcomment %}
+
+       {{fm}}
+       <input type="submit" value="Submit">
+</form>
+{% endblock %}

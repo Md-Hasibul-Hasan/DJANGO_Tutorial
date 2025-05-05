@@ -1,0 +1,37 @@
+{% include "../header.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <ul>
+
+    {{key}} <br> <br>
+    {{key.data1}} <br> <br>
+    {{key.data1.key1}} <br> <br>
+
+
+    {% for i,j in key.data1.items %}
+    <li> {{i}} == {{j}} </li> 
+    {% endfor %} <br>
+
+
+
+    {% for i,j in key.items %}  
+    <li>{{i}} == {{j}}</li> <br>
+
+        {% for key,value in j.items  %} 
+        <li> {{key}} == {{value}}</li> <br>
+        {% endfor %} 
+
+    {% endfor %} 
+
+    </ul>
+    
+    
+</body>
+</html>

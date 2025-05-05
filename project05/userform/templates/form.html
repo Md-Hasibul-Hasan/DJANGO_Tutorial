@@ -1,0 +1,90 @@
+{% include "home.html" %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container mt-5">
+
+
+
+<div align="center">
+<!-- form.html -->
+<form method="post">    {% csrf_token %}
+
+    <label for="id_name">Name:</label><br>
+    <input type="text" id="id_name" name="name" required><br><br>
+
+    <label for="id_email">Email:</label><br>
+    <input type="email" id="id_email" name="email" required><br><br>
+
+    <label for="id_password">Password:</label><br>
+    <input type="password" id="id_password" name="password" required><br><br>
+
+    <label for="id_confirm_password">Confirm Password:</label><br>
+    <input type="password" id="id_confirm_password" name="confirm_password" required><br><br>
+
+    <input type="submit" value="Submit"> 
+    <input type="reset" value="Reset">  
+
+    {% if messages %}
+        {% for m in messages %}
+           <p>{{m}}</p> 
+        {% endfor %}
+    {% endif %} 
+</form>
+<hr> 
+</div>
+
+
+
+
+
+{% comment %} Showing data from database  {% endcomment %}
+
+<div align="center">
+
+    <h1>User Info</h1>
+
+   {% if data %}
+
+   <table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Action</th>
+    </tr>
+
+    {% for i  in data  %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+        <td>
+            <a href="{% url 'update' i.id %}"><button>Update</button></a>
+            <a href="{% url 'delete' i.id %}"> <button >Delete</button></a>
+            
+        </td>
+    </tr>
+    {% endfor %}
+    </table> 
+
+
+   {% else %}
+   <h3>NO Data in DataBase.....</h3>
+   {% endif %} 
+
+  
+</div> 
+
+</div>
+
+</body>
+</html>

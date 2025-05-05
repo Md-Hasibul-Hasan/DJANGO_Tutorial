@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login please</h1>
+    <form action="" method="post">{% csrf_token %}
+    name: <input type="text" name="name" required > <br> <br>
+    password: <input type="text" name="password" required > <br> <br>
+    <button type="submit">Login</button>
+    <button type="reset">Reset</button>
+    </form> <br>
+    Did not sign up? <a href="{% url 'signup' %}"><button>sign up</button></a>
+</body>
+</html>

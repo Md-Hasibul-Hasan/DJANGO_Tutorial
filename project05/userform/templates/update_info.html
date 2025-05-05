@@ -1,0 +1,43 @@
+{% comment %} <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Info {{id}}</h1>
+    {{info.name}}
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div align="center">
+        <h1>Update Info {{id}}</h1>
+        <form method="post">
+            {% csrf_token %}
+            
+            <label for="id_name">Name:</label><br>
+            <input type="text" id="id_name" name="name" value="{{ user.name }}" required><br><br>
+
+            <label for="id_email">Email:</label><br>
+            <input type="email" id="id_email" name="email" value="{{ user.email }}" required><br><br>
+
+            <label for="id_password">Password:</label><br>
+            <input type="text" id="id_password" name="password" value="{{ user.password }}" required><br><br>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

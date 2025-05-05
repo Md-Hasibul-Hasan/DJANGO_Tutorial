@@ -1,0 +1,44 @@
+{% comment %} {% include "home.html" %} {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFO</title>
+</head>
+<body>
+   <h1>User Info</h1>
+   {% if data %}
+   <h3>Showing Data:</h3> 
+   {% else %}
+   <h3>NO Data.....</h3>
+   {% endif %} <br>
+
+
+   <table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Action</th>
+    </tr>
+
+    {% for i  in data  %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+        <td>
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+   </table> <br>
+
+   <a href="{% url 'form' %}">Back to Form</a>
+</body>
+</html>
